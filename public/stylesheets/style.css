@@ -3,7 +3,7 @@
 body {
   font-family: "Cabin", Arial, sans-serif;
   color: #ffffff;
-  background-color: #108a93;
+  background-color: #60b5aa;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,8 +11,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar {
-  background-color: #ad1d28;
-  border-color: #911821;
+  background-color: #70416d;
+  border-color: #70416d;
 }
 
 .navbar-brand {
@@ -27,11 +27,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 small {
-  color: #aaa;
+  color: #70416d;
 }
 
 .card {
-  background-color: #469ea8;
+  background-color: #90d1c9;
 }
 
 .card-primary {

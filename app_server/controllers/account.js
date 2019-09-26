@@ -5,7 +5,7 @@ res.render('index', { title: 'Sign Up' });
 
 /* GET sing up page */
 const logIn = function(req, res){ 
-    res.render('index', { title: 'Log In' }); 
+    res.render('logIn', { title: 'Log In' }); 
 };
 
 module.exports = { 

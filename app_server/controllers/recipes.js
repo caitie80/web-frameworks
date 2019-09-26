@@ -5,7 +5,7 @@ const homelist = function(req, res){
     
     /* GET 'Recipe info' page */
     const recipeInfo = function(req, res){
-    res.render('index', { title: 'Recipe info' });
+    res.render('recipe', { title: 'Recipe info' });
 };
 
     module.exports = {

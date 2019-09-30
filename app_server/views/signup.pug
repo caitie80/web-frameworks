@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  div(style="width:325px;margin: auto;")
+    form
+        table
+          tr
+            td Username
+            td
+              input(name="username" type="text")
+          tr
+            td Email
+            td
+              input(name="email" type="text")
+          tr
+            td Password
+            td
+              input(name="pass" type="text")
+          tr
+            td Confirm Password
+            td
+              input(name="confirmPass" type="text")
+          tr
+            td(colspan="2" align="center")
+              input(type="submit" value="Submit")

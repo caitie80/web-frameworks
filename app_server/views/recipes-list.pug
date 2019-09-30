@@ -2,44 +2,20 @@ extends layout
 block content
   .row.banner
     .col-12
-      h1 CookBooker
-        small &nbsp;Find inspiration for what to cook!
+      h1=pageHeader.title
+        small &nbsp;#{pageHeader.strapline}
   .row
     .col-12.col-md-8
-
-      .card
-        .card-block
-          h4
-            a(href="/recipe") Beef Burgers
-            img(src='https://assets3.thrillist.com/v1/image/2797371/size/tmg-article_default_mobile.jpg' style='max-width:50%').float-right.img-thumbnail.img-fluid
-          p.time Prep: 30 minutes <br> Cooking: 30 minutes
-          .facilities
-            span.badge.badge-warning Gluten free
-            span.badge.badge-warning American
-            span.badge.badge-warning Beef
-
-      .card
-        .card-block
-          h4
-            a(href="/recipe") Chicken Curry
-            img(src='https://hips.hearstapps.com/delish/assets/17/31/1501791674-delish-chicken-curry-horizontal.jpg' style='max-width:50%').float-right.img-thumbnail.img-fluid
-          p.time Prep: 30 minutes <br> Cooking: 10 minutes
-          .facilities
-            span.badge.badge-warning Chicken
-            span.badge.badge-warning Asian
-
-
-      .card
-        .card-block
-          h4
-            a(href="/recipe") Cheese and Mushroom Gnocchi
-            img(src='http://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2016/08/gnocchi-with-mushrooms.jpg?itok=liX90eix' style='max-width:50%').float-right.img-thumbnail.img-fluid
-          p.time Prep: 10 minutes <br> Cooking: 10 minutes
-          .facilities
-            span.badge.badge-warning Vegetarian
-            span.badge.badge-warning Pasta
-            span.badge.badge-warning Fast
-
+      each recipe in recipes
+        .card
+          .card-block
+            h4
+              a(href="/recipe")= recipe.name
+              img(src='https://assets3.thrillist.com/v1/image/2797371/size/tmg-article_default_mobile.jpg' style='max-width:50%').float-right.img-thumbnail.img-fluid
+            p.time Prep time: #{recipe.prepTime} <br> Cook time: #{recipe.cookTime}
+            .tags
+              each tag in recipe.tags
+                span.badge.badge-warning= tag
     .col-12.col-md-4
       p.lead Saved recipes
         ul

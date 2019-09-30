@@ -1,6 +1,6 @@
 /* GET sing up page */
 const signUp = function(req, res){ 
-res.render('index', { title: 'Sign Up' }); 
+res.render('signup', { title: 'Sign Up' }); 
 };
 
 /* GET sing up page */

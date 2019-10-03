@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-let dbURI = 'mongodb://localhost/CookBooker';
+var dbURI = 'mongodb://localhost/CookBooker';
 if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGODB_URI;
   }
-  mongoose.connect(dbURI.toString());
+  mongoose.connect(dbURI);
   
   const readLine = require ('readline');
   if (process.platform === 'win32'){

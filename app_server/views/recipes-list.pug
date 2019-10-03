@@ -11,7 +11,7 @@ block content
           .card-block
             h4
               a(href="/recipe")= recipe.name
-              img(src='https://assets3.thrillist.com/v1/image/2797371/size/tmg-article_default_mobile.jpg' style='max-width:50%').float-right.img-thumbnail.img-fluid
+              img(src=recipe.imagePath style='max-width:50%').float-right.img-thumbnail.img-fluid
             p.time Prep time: #{recipe.prepTime} <br> Cook time: #{recipe.cookTime}
             .tags
               each tag in recipe.tags
@@ -19,7 +19,6 @@ block content
     .col-12.col-md-4
       p.lead Saved recipes
         ul
-          li
-            a(href='/recipe') Beef Burger
-          li
-            a(href='/recipe') Chicken Curry
+          each recipe in savedRecipes
+            li
+              a(href='/recipe')=recipe

@@ -6,24 +6,28 @@ const homelist = function(req, res){
             title: 'CookBooker',
             strapline: 'Find inspiration for what to cook!'
         },
+        savedRecipes: ['Beef Burgers', 'Chicken Curry'],
         recipes: [{
                 name: 'Beef Burgers',
                 prepTime: '30 minutes',
                 cookTime: '30 minutes',
-                tags: ['Gluten Free', 'American', 'Beef']
+                tags: ['Gluten Free', 'American', 'Beef'],
+                imagePath: '/images/burger.jpg'
            },
            {
                 name: 'Chicken Curry',
                 prepTime: '30 minutes',
                 cookTime: '10 minutes',
-                tags: ['Chicken', 'Asian']
+                tags: ['Chicken', 'Asian'],
+                imagePath: '/images/curry.jpg'
            },
            {
-            name: 'Cheese and Mushroom Gnocchi',
-            prepTime: '10 minutes',
-            cookTime: '10 minutes',
-            tags: ['Vegetarian', 'Pasta','Fast']
-            },
+                name: 'Cheese and Mushroom Gnocchi',
+                prepTime: '10 minutes',
+                cookTime: '10 minutes',
+                tags: ['Vegetarian', 'Pasta','Fast'],
+                imagePath: '/images/gnocchi.jpg'
+                },
         ]
     });
     };
@@ -32,9 +36,9 @@ const homelist = function(req, res){
     const recipeInfo = function(req, res){
     res.render('recipe', { title: 'Recipe info',
         recipe: {
-            name: 'Beef Burger',
-            prepTime: '30 minutes',
-            cookTime: '30 minutes',
+            name: 'Beef Burgers',
+            prepTime: 30,
+            cookTime: 30,
             tags: ['Gluten Free', 'American', 'Beef'],
             ingredients: ['500g beef mince', '1 egg', '1 tbsp vegetable oil',
                 '1 small onion, diced', '4 gluten free burger buns'],
@@ -47,8 +51,9 @@ const homelist = function(req, res){
                 'Oil the other side, then turn over using tongs. Don’t press down on the meat, as that will squeeze out the juices',
                 'Cook for 5 mins more for medium. If you like your burgers pink in the middle, cook 1 min less each side. For well done, cook 1 min more.',
                 'Take the burgers off the barbecue. Leave to rest on a plate so that all the juices can settle inside.',
-                'Slice 4 burger buns in half. Place, cut-side down, on the barbecue rack and toast for 1 min until they are lightly charred. Place a burger inside each bun, then top with your choice of accompaniment.']
-        }
+                'Slice 4 burger buns in half. Place, cut-side down, on the barbecue rack and toast for 1 min until they are lightly charred. Place a burger inside each bun, then top with your choice of accompaniment.'],
+            imagePath: '/images/burger.jpg'
+            }
         
     });
 };

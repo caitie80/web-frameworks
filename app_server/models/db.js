@@ -4,7 +4,7 @@ let dbURI = 'mongodb://localhost/CookBooker';
 if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGODB_URI;
   }
-  mongoose.connect(dbURI);
+  mongoose.connect(dbURI.toString());
   
   const readLine = require ('readline');
   if (process.platform === 'win32'){

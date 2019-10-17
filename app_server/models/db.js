@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 
 var dbURI = 'mongodb://localhost/CookBooker';
 if (process.env.NODE_ENV === 'production') {
-    dbURI = process.env.MONGODB_URI;
+  dbURI =
+  'mongodb://heroku_mpr5z30m:rqrvikaec6rtm03jp7ssruhq2g@ds329058.mlab.com:29058/heroku_mpr5z30m';
+  
   }
   mongoose.connect(dbURI);
   

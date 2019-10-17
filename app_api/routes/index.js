@@ -1,0 +1,29 @@
+const express = require('express');
+const router = express.Router();
+const ctrlRecipes = require('../controllers/recipes');
+const ctrlAccounts = require('../controllers/accounts');
+
+// Recipes
+router
+  .route('/')
+  .get(ctrlRecipes.recipesListByName)
+  .post(ctrlRecipes.recipesCreate);
+
+router
+  .route('/recipe/:locationid')
+  .get(ctrlRecipes.recipeReadOne)
+  .put(ctrlRecipes.recipeUpdateOne)
+  .delete(ctrlRecipes.recipeDeleteOne);
+  
+// Account
+router
+  .route('/signup')
+  .post(ctrlAccounts.accountsCreate);
+
+router
+  .route('/login')
+  .get(ctrlAccounts.accountsReadOne);
+  /*.put(ctrlAccounts.reviewsUpdateOne)
+  .delete(ctrlAccounts.reviewsDeleteOne);*/
+
+module.exports = router;

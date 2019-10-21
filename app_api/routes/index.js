@@ -10,7 +10,7 @@ router
   .post(ctrlRecipes.recipesCreate);
 
 router
-  .route('/recipe/:locationid')
+  .route('/recipe/:recipeid')
   .get(ctrlRecipes.recipeReadOne)
   .put(ctrlRecipes.recipeUpdateOne)
   .delete(ctrlRecipes.recipeDeleteOne);
@@ -18,7 +18,8 @@ router
 // Account
 router
   .route('/signup')
-  .post(ctrlAccounts.accountsCreate);
+  .post(ctrlAccounts.accountsCreate)
+  .get(ctrlAccounts.accountsGetOne);
 
 router
   .route('/login')

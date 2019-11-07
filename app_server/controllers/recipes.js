@@ -1,5 +1,14 @@
+const request = require('request');
+
+const apiOptions = { 
+    server : 'http://localhost:3000' 
+    }; 
+    if (process.env.NODE_ENV === 'production') { 
+    apiOptions.server = 'https://caitiewf.herokuapp.com/'; 
+    }
+    
 /* GET 'home' page */
-const homelist = function(req, res){
+const _renderHomepage = function(req, res) {
     res.render('recipes-list', { 
         title: 'Home',
         pageHeader: {
@@ -30,7 +39,21 @@ const homelist = function(req, res){
                 },
         ]
     });
+}
+const homelist = function(req, res){
+    const path = '/api'; 
+    const requestOptions = { 
+    url : apiOptions.server + path, 
+    method : 'GET', 
+    json : {}, 
+    qs : {} 
+    }; 
+    request(requestOptions, (err, response, body) => { 
+    _renderHomepage(req, res); 
+    } 
+    );
     };
+    
     
     /* GET 'Recipe info' page */
     const recipeInfo = function(req, res){

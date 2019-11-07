@@ -6,9 +6,30 @@ const recipesCreate = function (req, res) { res
   .status(200)
   .json({"status" : "success"});
   };
-const recipesListByName = function (req, res) {res
-  .status(200)
-  .json({"status" : "success"});
+  
+const recipesListByName = function (req, res) {
+  Rec
+    .find()
+    .exec((err, results) => {
+      if(err){
+        res
+        .status(400)
+        .json(err);
+      }
+      else if(!results)
+      {
+        res
+        .status(404)
+        .json({"messge": "Recipes not found"});
+      }
+      else{
+        res
+          .status(200)
+          .json(results);
+      }
+
+    })
+  
    };
 
   const recipeReadOne = function (req, res) {

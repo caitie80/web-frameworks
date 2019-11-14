@@ -3,6 +3,11 @@ const signUp = function(req, res){
 res.render('signup', { title: 'Sign Up' }); 
 };
 
+/* PUSH sing up page */
+const doSignUp = function(req, res){ 
+    res.render('signup', { title: 'Sign Up' }); 
+    };
+
 /* GET sing up page */
 const logIn = function(req, res){ 
     res.render('logIn', { title: 'Log In' }); 
@@ -10,5 +15,6 @@ const logIn = function(req, res){
 
 module.exports = { 
     signUp,
-    logIn 
+    logIn,
+    doSignUp
 };

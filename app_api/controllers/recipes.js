@@ -20,7 +20,7 @@ const recipesListByName = function (req, res) {
       {
         res
         .status(404)
-        .json({"messge": "Recipes not found"});
+        .json({"message": "Recipes not found"});
       }
       else{
         res

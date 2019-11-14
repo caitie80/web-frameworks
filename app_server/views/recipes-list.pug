@@ -6,11 +6,12 @@ block content
         small &nbsp;#{pageHeader.strapline}
   .row
     .col-12.col-md-8
+      .error=message
       each recipe in recipes
         .card
           .card-block
             h4
-              a(href="/recipe")= recipe.name
+              a(href=`/recipe/${recipe._id}`)= recipe.name
               img(src=recipe.imagePath style='max-width:50%').float-right.img-thumbnail.img-fluid
             p.time Prep time: #{recipe.prepTime} <br> Cook time: #{recipe.cookTime}
             .tags

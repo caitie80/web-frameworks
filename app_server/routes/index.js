@@ -6,9 +6,12 @@ const ctrlAccount = require('../controllers/account');
 
 /* Recipes pages */
 router.get('/', ctrlRecipes.homelist);
-router.get('/recipe', ctrlRecipes.recipeInfo);
+router.get('/recipe/:recipeid', ctrlRecipes.recipeInfo);
 /* Account pages */
-router.get('/signup', ctrlAccount.signUp);
+router
+.route('/signup')
+.get(ctrlAccount.signUp)
+.post(ctrlAccount.doSignUp);
 router.get('/login', ctrlAccount.logIn);
 module.exports = router;
 

@@ -6,12 +6,12 @@ const recipeSchema = new mongoose.Schema({
         required: true
     },
     prepTime: {
-        type: Number,
-        'default': 0
+        type: String,
+        'default': "0 minutes"
     },
     cookTime: {
-        type: Number,
-        'default': 0
+        type: String,
+        'default': "0 minutes"
     },
     ingredients: {
         type: [String],

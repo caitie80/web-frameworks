@@ -10,6 +10,7 @@
     "npm": "^6.9.0"
   },
   "dependencies": {
+    "@angular/cli": "^8.3.20",
     "bootstrap": "^3.3.7",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",

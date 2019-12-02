@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('cookbooker-public app is running!');
+    expect(page.getTitleText()).toEqual('CookBooker-public app is running!');
   });
 
   afterEach(async () => {

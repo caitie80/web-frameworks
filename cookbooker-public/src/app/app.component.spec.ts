@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'cookbooker-public'`, () => {
+  it(`should have as title 'CookBooker-public'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('cookbooker-public');
+    expect(app.title).toEqual('CookBooker-public');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('cookbooker-public app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('CookBooker-public app is running!');
   });
 });

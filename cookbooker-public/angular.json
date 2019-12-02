@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cookbooker-public": {
+    "CookBooker-public": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cookbooker-public",
+            "outputPath": "dist/CookBooker-public",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cookbooker-public:build"
+            "browserTarget": "CookBooker-public:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cookbooker-public:build:production"
+              "browserTarget": "CookBooker-public:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cookbooker-public:build"
+            "browserTarget": "CookBooker-public:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "cookbooker-public:serve"
+            "devServerTarget": "CookBooker-public:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cookbooker-public:serve:production"
+              "devServerTarget": "CookBooker-public:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "cookbooker-public"
+  "defaultProject": "CookBooker-public"
 }

@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const ctrlRecipes = require('../controllers/recipes'); 
-const ctrlAccount = require('../controllers/account');
+const ctrlAccount = require('../controllers/account'); 
+const ctrlOther = require('../controllers/other');
 
 /* Recipes pages */
 router.get('/', ctrlRecipes.homelist);
@@ -13,5 +14,8 @@ router
 .get(ctrlAccount.signUp)
 .post(ctrlAccount.doSignUp);
 router.get('/login', ctrlAccount.logIn);
+
+
+router.get('/about', ctrlOther.about);
 module.exports = router;
 

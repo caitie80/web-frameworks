@@ -32,8 +32,7 @@ const doSignUp = function(req, res){
     };
     request( requestOptions,(err, response, body) => {
     if (response.statusCode === 201) { 
-        console.log(response.body._id);
-    res.redirect(`/`); 
+        res.redirect(`/`); 
     } else { 
     _showError(req, res, response.statusCode); 
     }
@@ -45,7 +44,34 @@ const doSignUp = function(req, res){
 /* GET sing up page */
 const logIn = function(req, res){ 
     res.render('logIn', { title: 'Log In' }); 
+
 };
+
+const doLogIn = function(req, res){
+    const path = '/api/login'; 
+    const requestOptions = 
+    { 
+        url : apiOptions.server + path, 
+        method : 'GET', 
+        json : {}, 
+        qs : {
+            email: req.body.email,
+            password: req.body.password
+        } 
+    }; 
+        request(requestOptions, (err, response, body) => {
+            if(response.statusCode === 202)
+            {
+                res.redirect(`/`);
+            } 
+            else{
+                _showError(req, res, response.statusCode);
+            }
+    
+        } 
+        );
+    };
+
 
 const _showError = function (req, res, status) {
     let title = '';
@@ -67,5 +93,6 @@ const _showError = function (req, res, status) {
 module.exports = { 
     signUp,
     logIn,
-    doSignUp
+    doSignUp,
+    doLogIn
 };

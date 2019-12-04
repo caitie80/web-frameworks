@@ -13,8 +13,11 @@ router
 .route('/signup')
 .get(ctrlAccount.signUp)
 .post(ctrlAccount.doSignUp);
-router.get('/login', ctrlAccount.logIn);
 
+router
+.route('/login')
+.get(ctrlAccount.logIn)
+.post(ctrlAccount.doLogIn);
 
 router.get('/about', ctrlOther.about);
 module.exports = router;

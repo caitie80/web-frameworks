@@ -11,15 +11,14 @@ const apiOptions = {
 const _renderHomepage = function(req, res, responseBody) {
     let message = null; 
 if (!(responseBody instanceof Array)) { 
-message = "API lookup error"; 
-responseBody = []; 
-} else { 
-if (!responseBody.length) { 
-message = "No recipes found"; 
+    message = "API lookup error"; 
+    responseBody = []; 
 } 
+else { 
+    if (!responseBody.length) { 
+    message = "No recipes found"; 
+    } 
 }
-
-    
     res.render('recipes-list', { 
         title: 'Home',
         pageHeader: {

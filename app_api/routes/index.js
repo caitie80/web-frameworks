@@ -18,13 +18,10 @@ router
 // Account
 router
   .route('/signup')
-  .post(ctrlAccounts.accountsCreate)
-  .get(ctrlAccounts.accountsGetOne);
+  .post(ctrlAccounts.accountsCreate);
 
 router
   .route('/login')
-  .get(ctrlAccounts.accountsReadOne);
-  /*.put(ctrlAccounts.reviewsUpdateOne)
-  .delete(ctrlAccounts.reviewsDeleteOne);*/
+  .get(ctrlAccounts.accountsGetOne);
 
 module.exports = router;
